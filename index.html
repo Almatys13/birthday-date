@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tonight's Plan ❤️</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="background">
+        <div class="glow glow-one"></div>
+        <div class="glow glow-two"></div>
+    </div>
+
+    <main class="app">
+
+        <!-- Progress -->
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+
+            <div class="step-text" id="stepText">
+                1 of 4
+            </div>
+        </div>
+
+
+        <!-- ========================= -->
+        <!-- STEP 1 -->
+        <!-- ========================= -->
+
+        <section class="screen active" id="screen1">
+
+            <div class="heart">♥</div>
+
+            <p class="eyebrow">IMPORTANT QUESTION</p>
+
+            <h1 id="hungryTitle">
+                Who's hungry?
+            </h1>
+
+            <div class="choice-container">
+
+                <button
+                    class="choice-button"
+                    data-question="hungry"
+                    data-answer="Me"
+                    onclick="selectChoice(this)"
+                >
+                    <span>Me</span>
+                    <span class="choice-arrow">→</span>
+                </button>
+
+                <button
+                    class="choice-button"
+                    data-question="hungry"
+                    data-answer="Still me"
+                    onclick="selectChoice(this)"
+                >
+                    <span>Still me</span>
+                    <span class="choice-arrow">→</span>
+                </button>
+
+            </div>
+
+            <button
+                class="continue-button"
+                id="continue1"
+                onclick="nextScreen()"
+                disabled
+            >
+                Continue
+                <span>→</span>
+            </button>
+
+        </section>
+
+
+        <!-- ========================= -->
+        <!-- STEP 2 -->
+        <!-- ========================= -->
+
+        <section class="screen" id="screen2">
+
+            <button class="back-button" onclick="previousScreen()">
+                ← Back
+            </button>
+
+            <div class="heart small-heart">♥</div>
+
+            <p class="eyebrow">THE IMPORTANT PART</p>
+
+            <h1 id="moodTitle">
+                What are you in the mood for?
+            </h1>
+
+            <p class="subtitle" id="moodSubtitle">
+                Pick whatever sounds best right now.
+            </p>
+
+            <div class="mood-grid">
+
+                <button
+                    class="mood-card"
+                    data-question="mood"
+                    data-answer="Italian"
+                    onclick="selectMood(this)"
+                >
+                    <span class="mood-icon">🍝</span>
+                    <span>Italian</span>
+                </button>
+
+                <button
+                    class="mood-card"
+                    data-question="mood"
+                    data-answer="Sushi"
+                    onclick="selectMood(this)"
+                >
+                    <span class="mood-icon">🍣</span>
+                    <span>Sushi</span>
+                </button>
+
+                <button
+                    class="mood-card"
+                    data-question="mood"
+                    data-answer="Steak"
+                    onclick="selectMood(this)"
+                >
+                    <span class="mood-icon">🥩</span>
+                    <span>Steak</span>
+                </button>
+
+                <button
+                    class="mood-card"
+                    data-question="mood"
+                    data-answer="Mexican"
+                    onclick="selectMood(this)"
+                >
+                    <span class="mood-icon">🌮</span>
+                    <span>Mexican</span>
+                </button>
+
+                <button
+                    class="mood-card"
+                    data-question="mood"
+                    data-answer="Pizza"
+                    onclick="selectMood(this)"
+                >
+                    <span class="mood-icon">🍕</span>
+                    <span>Pizza</span>
+                </button>
+
+                <button
+                    class="mood-card"
+                    data-question="mood"
+                    data-answer="Casual"
+                    onclick="selectMood(this)"
+                >
+                    <span class="mood-icon">🍔</span>
+                    <span>Something casual</span>
+                </button>
+
+                <button
+                    class="mood-card wide"
+                    data-question="mood"
+                    data-answer="Surprise me"
+                    onclick="selectMood(this)"
+                >
+                    <span class="mood-icon">✨</span>
+                    <span>Surprise me</span>
+                </button>
+
+            </div>
+
+            <button
+                class="continue-button"
+                id="continue2"
+                onclick="nextScreen()"
+                disabled
+            >
+                Show me the options
+                <span>→</span>
+            </button>
+
+        </section>
+
+
+        <!-- ========================= -->
+        <!-- STEP 3 -->
+        <!-- ========================= -->
+
+        <section class="screen" id="screen3">
+
+            <button class="back-button" onclick="previousScreen()">
+                ← Back
+            </button>
+
+            <div class="heart small-heart">♥</div>
+
+            <p class="eyebrow">YOUR OPTIONS</p>
+
+            <h1 id="restaurantTitle">
+                Pick your favorite.
+            </h1>
+
+            <p class="subtitle" id="restaurantSubtitle">
+                I've got a few ideas...
+            </p>
+
+            <div id="restaurantList" class="restaurant-list">
+                <!-- Restaurants generated by JavaScript -->
+            </div>
+
+            <button
+                class="continue-button"
+                id="continue3"
+                onclick="nextScreen()"
+                disabled
+            >
+                That's the one
+                <span>→</span>
+            </button>
+
+        </section>
+
+
+        <!-- ========================= -->
+        <!-- STEP 4 -->
+        <!-- ========================= -->
+
+        <section class="screen" id="screen4">
+
+            <div class="celebration">
+
+                <div class="big-heart">
+                    ♥
+                </div>
+
+                <p class="eyebrow">DONE DEAL</p>
+
+                <h1 id="doneTitle">
+                    It's a date. ❤️
+                </h1>
+
+                <p class="subtitle" id="doneSubtitle">
+                    You picked. I plan the rest.
+                </p>
+
+                <div class="summary-card">
+
+                    <div class="summary-row">
+                        <span>Who's hungry?</span>
+                        <strong id="summaryHungry">—</strong>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>In the mood for</span>
+                        <strong id="summaryMood">—</strong>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Restaurant</span>
+                        <strong id="summaryRestaurant">—</strong>
+                    </div>
+
+                </div>
+
+                <p class="little-message" id="finalMessage">
+                    Good choice. I think we're going to have a pretty good night.
+                </p>
+
+                <button
+                    class="restart-button"
+                    onclick="restart()"
+                >
+                    Start over
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Hidden form used for Formspree -->
+    <form
+        id="submissionForm"
+        action=""
+        method="POST"
+        style="display:none;"
+    >
+        <input type="hidden" name="Hungry" id="formHungry">
+        <input type="hidden" name="Mood" id="formMood">
+        <input type="hidden" name="Restaurant" id="formRestaurant">
+    </form>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

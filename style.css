@@ -1,0 +1,765 @@
+:root {
+    --background: #fff8f7;
+    --background-two: #fdf0ee;
+
+    --text: #292323;
+    --muted: #847878;
+
+    --accent: #c96b73;
+    --accent-dark: #a94f59;
+    --accent-light: #f9dfe1;
+
+    --white: #ffffff;
+
+    --border: rgba(41, 35, 35, 0.09);
+
+    --shadow:
+        0 20px 60px rgba(80, 35, 40, 0.08);
+
+    --radius: 24px;
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    min-height: 100vh;
+
+    font-family: "DM Sans", sans-serif;
+
+    color: var(--text);
+
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(255, 215, 218, 0.45),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            rgba(244, 205, 210, 0.4),
+            transparent 35%
+        ),
+        var(--background);
+
+    overflow-x: hidden;
+}
+
+
+.background {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: -1;
+}
+
+
+.glow {
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(80px);
+
+    opacity: 0.35;
+}
+
+
+.glow-one {
+    width: 300px;
+    height: 300px;
+
+    background: #f8cfd3;
+
+    top: -100px;
+    left: -100px;
+}
+
+
+.glow-two {
+    width: 350px;
+    height: 350px;
+
+    background: #f4d9dc;
+
+    right: -150px;
+    bottom: -100px;
+}
+
+
+.app {
+    width: min(680px, calc(100% - 32px));
+
+    min-height: 100vh;
+
+    margin: 0 auto;
+
+    padding:
+        28px
+        0
+        60px;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+/* ========================= */
+/* PROGRESS */
+/* ========================= */
+
+.progress-container {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-bottom: 25px;
+}
+
+
+.progress-bar {
+    height: 5px;
+
+    flex: 1;
+
+    border-radius: 20px;
+
+    background: rgba(41, 35, 35, 0.08);
+
+    overflow: hidden;
+}
+
+
+.progress-fill {
+    width: 25%;
+
+    height: 100%;
+
+    border-radius: 20px;
+
+    background: var(--accent);
+
+    transition: width 0.4s ease;
+}
+
+
+.step-text {
+    font-size: 12px;
+
+    color: var(--muted);
+
+    min-width: 35px;
+
+    text-align: right;
+}
+
+
+/* ========================= */
+/* SCREEN */
+/* ========================= */
+
+.screen {
+    display: none;
+
+    animation: fadeIn 0.45s ease;
+}
+
+
+.screen.active {
+    display: block;
+}
+
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ========================= */
+/* TEXT */
+/* ========================= */
+
+.heart {
+    width: 56px;
+    height: 56px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: 35px auto 25px;
+
+    border-radius: 50%;
+
+    color: var(--accent);
+
+    background: var(--white);
+
+    box-shadow: var(--shadow);
+
+    font-size: 22px;
+}
+
+
+.small-heart {
+    width: 45px;
+    height: 45px;
+
+    margin-top: 20px;
+
+    font-size: 18px;
+}
+
+
+.big-heart {
+    width: 82px;
+    height: 82px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: 20px auto 28px;
+
+    border-radius: 50%;
+
+    color: var(--accent);
+
+    background: var(--white);
+
+    box-shadow: var(--shadow);
+
+    font-size: 32px;
+}
+
+
+.eyebrow {
+    text-align: center;
+
+    color: var(--accent);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.16em;
+
+    margin-bottom: 12px;
+}
+
+
+h1 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(38px, 8vw, 58px);
+
+    line-height: 1.08;
+
+    font-weight: 600;
+
+    text-align: center;
+
+    letter-spacing: -0.03em;
+}
+
+
+.subtitle {
+    max-width: 470px;
+
+    margin: 17px auto 34px;
+
+    color: var(--muted);
+
+    text-align: center;
+
+    font-size: 16px;
+
+    line-height: 1.6;
+}
+
+
+/* ========================= */
+/* CHOICES */
+/* ========================= */
+
+.choice-container {
+    display: grid;
+
+    gap: 14px;
+
+    margin-top: 20px;
+}
+
+
+.choice-button {
+    width: 100%;
+
+    border: 1px solid var(--border);
+
+    background: rgba(255, 255, 255, 0.75);
+
+    border-radius: var(--radius);
+
+    padding: 22px 24px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    font-family: inherit;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    color: var(--text);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.choice-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow: var(--shadow);
+
+    border-color: rgba(201, 107, 115, 0.3);
+}
+
+
+.choice-button.selected {
+    background: var(--accent-light);
+
+    border-color: var(--accent);
+}
+
+
+.choice-arrow {
+    color: var(--accent);
+
+    font-size: 20px;
+}
+
+
+/* ========================= */
+/* MOOD GRID */
+/* ========================= */
+
+.mood-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 13px;
+}
+
+
+.mood-card {
+    min-height: 125px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 9px;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    color: var(--text);
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+.mood-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow: var(--shadow);
+}
+
+
+.mood-card.selected {
+    background: var(--accent-light);
+
+    border-color: var(--accent);
+}
+
+
+.mood-card.wide {
+    grid-column: span 2;
+
+    min-height: 90px;
+
+    flex-direction: row;
+}
+
+
+.mood-icon {
+    font-size: 28px;
+}
+
+
+/* ========================= */
+/* RESTAURANTS */
+/* ========================= */
+
+.restaurant-list {
+    display: grid;
+
+    gap: 14px;
+
+    margin-bottom: 22px;
+}
+
+
+.restaurant-card {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 20px;
+
+    border-radius: 20px;
+
+    border: 1px solid var(--border);
+
+    background: rgba(255, 255, 255, 0.8);
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+.restaurant-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow: var(--shadow);
+}
+
+
+.restaurant-card.selected {
+    border-color: var(--accent);
+
+    background: var(--accent-light);
+}
+
+
+.restaurant-info {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.restaurant-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 15px;
+
+    background: #fff;
+
+    font-size: 23px;
+}
+
+
+.restaurant-name {
+    font-size: 16px;
+
+    font-weight: 700;
+
+    margin-bottom: 4px;
+}
+
+
+.restaurant-description {
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+.restaurant-link {
+    color: var(--accent);
+
+    font-size: 13px;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    font-weight: 600;
+}
+
+
+.restaurant-link:hover {
+    text-decoration: underline;
+}
+
+
+/* ========================= */
+/* BUTTONS */
+/* ========================= */
+
+.continue-button {
+    width: 100%;
+
+    margin-top: 28px;
+
+    border: none;
+
+    border-radius: 18px;
+
+    padding: 18px 22px;
+
+    background: var(--accent);
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    transition: 0.2s ease;
+}
+
+
+.continue-button:not(:disabled):hover {
+    background: var(--accent-dark);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px rgba(169, 79, 89, 0.2);
+}
+
+
+.continue-button:disabled {
+    opacity: 0.4;
+
+    cursor: not-allowed;
+}
+
+
+.back-button {
+    border: none;
+
+    background: transparent;
+
+    color: var(--muted);
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    padding: 6px 0;
+}
+
+
+.back-button:hover {
+    color: var(--text);
+}
+
+
+.restart-button {
+    margin-top: 24px;
+
+    border: 1px solid var(--border);
+
+    background: rgba(255,255,255,0.7);
+
+    border-radius: 14px;
+
+    padding: 12px 18px;
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    color: var(--muted);
+}
+
+
+/* ========================= */
+/* SUMMARY */
+/* ========================= */
+
+.summary-card {
+    background: rgba(255, 255, 255, 0.8);
+
+    border: 1px solid var(--border);
+
+    border-radius: 24px;
+
+    padding: 7px 22px;
+
+    box-shadow: var(--shadow);
+
+    margin-top: 30px;
+}
+
+
+.summary-row {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 18px 0;
+
+    border-bottom: 1px solid var(--border);
+}
+
+
+.summary-row:last-child {
+    border-bottom: none;
+}
+
+
+.summary-row span {
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+
+.summary-row strong {
+    text-align: right;
+
+    font-size: 14px;
+}
+
+
+.little-message {
+    margin: 27px auto 0;
+
+    max-width: 430px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    text-align: center;
+}
+
+
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+
+@media (max-width: 560px) {
+
+    .app {
+        width: min(100% - 24px, 680px);
+
+        padding-top: 18px;
+    }
+
+
+    h1 {
+        font-size: 42px;
+    }
+
+
+    .mood-grid {
+        gap: 10px;
+    }
+
+
+    .mood-card {
+        min-height: 110px;
+    }
+
+
+    .restaurant-card {
+        padding: 16px;
+    }
+
+
+    .restaurant-link {
+        font-size: 12px;
+    }
+
+}
