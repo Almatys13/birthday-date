@@ -56,21 +56,21 @@ const CONFIG = {
                 name: "Restaurant One",
                 description: "Italian • Dinner",
                 icon: "🍝",
-                link: "https://example.com"
+                link: "https://www.basilicoct.com"
             },
 
             {
                 name: "Restaurant Two",
                 description: "Italian • Cozy",
                 icon: "🍷",
-                link: "https://example.com"
+                link: "https://www.mercatoitaliankitchen.com/locations/shelton"
             },
 
             {
                 name: "Restaurant Three",
                 description: "Italian • Date night",
                 icon: "🍕",
-                link: "https://example.com"
+                link: "https://ilgabbianonewhaven.com/all-day-menu/"
             }
 
         ],
@@ -82,21 +82,21 @@ const CONFIG = {
                 name: "Sushi Spot One",
                 description: "Sushi • Dinner",
                 icon: "🍣",
-                link: "https://example.com"
+                link: "https://www.maru67.com"
             },
 
             {
                 name: "Sushi Spot Two",
                 description: "Sushi • Upscale",
                 icon: "🍱",
-                link: "https://example.com"
+                link: "https://www.izumisushi111.com"
             },
 
             {
                 name: "Sushi Spot Three",
                 description: "Sushi • Casual",
                 icon: "🥢",
-                link: "https://example.com"
+                link: "https://wildkanjihibachi.com"
             }
 
         ],
@@ -108,51 +108,32 @@ const CONFIG = {
                 name: "Steakhouse One",
                 description: "Steak • Dinner",
                 icon: "🥩",
-                link: "https://example.com"
+                link: "https://www.texasroadhouse.com/global-menu"
             },
 
             {
                 name: "Steakhouse Two",
                 description: "Steak • Date night",
                 icon: "🍷",
-                link: "https://example.com"
+                link: "https://www.longhornsteakhouse.com/menu/legendary-steaks-combos"
             }
 
         ],
 
 
-        "Mexican": [
-
-            {
-                name: "Mexican Spot One",
-                description: "Mexican • Dinner",
-                icon: "🌮",
-                link: "https://example.com"
-            },
-
-            {
-                name: "Mexican Spot Two",
-                description: "Mexican • Margaritas",
-                icon: "🌮",
-                link: "https://example.com"
-            }
-
-        ],
-
-
-        "Pizza": [
+        "Chinese Buffet": [
 
             {
                 name: "Pizza Place One",
                 description: "Pizza • Casual",
-                icon: "🍕",
+                icon: "🐉",
                 link: "https://example.com"
             },
 
             {
                 name: "Pizza Place Two",
                 description: "Pizza • Dinner",
-                icon: "🍕",
+                icon: "🐉🐉",
                 link: "https://example.com"
             }
 
@@ -181,8 +162,8 @@ const CONFIG = {
         "Surprise me": [
 
             {
-                name: "Surprise Option One",
-                description: "You don't need to know everything 😉",
+                name: "Please go back and think harder",
+                description: "Just kidding I will cook up a great spot",
                 icon: "✨",
                 link: "https://example.com"
             },
