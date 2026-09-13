@@ -23,18 +23,18 @@ const CONFIG = {
         "Pick your favorite.",
 
     restaurantSubtitle:
-        "I've got a few ideas...",
+        "Here are the best spots I found",
 
 
     doneTitle:
-        "It's a date. ❤️",
+        "It's a date.",
 
     doneSubtitle:
         "You picked. I plan the rest.",
 
 
     finalMessage:
-        "Good choice. I think we're going to have a pretty good night.",
+        "Kocham Cie!",
 
 
     /* =====================================================
@@ -124,17 +124,17 @@ const CONFIG = {
         "Chinese Buffet": [
 
             {
-                name: "Pizza Place One",
-                description: "Pizza • Casual",
+                name: "Chinese spot numero uno",
+                description: "Chinese + seafood all you can eat",
                 icon: "🐉",
-                link: "https://example.com"
+                link: "https://www.umibuffet.com/menu"
             },
 
             {
-                name: "Pizza Place Two",
-                description: "Pizza • Dinner",
+                name: "Chinese spot numero dos",
+                description: "Classic chinese spot in Stratford",
                 icon: "🐉🐉",
-                link: "https://example.com"
+                link: "https://www.yelp.com/biz/osaka-hibachi-buffet-stratford"
             }
 
         ],
@@ -146,14 +146,14 @@ const CONFIG = {
                 name: "Casual Spot One",
                 description: "Casual • Easy dinner",
                 icon: "🍔",
-                link: "https://example.com"
+                link: "https://thehousatonichouse.com/food-menu"
             },
 
             {
                 name: "Casual Spot Two",
-                description: "Casual • Drinks & food",
+                description: "Casual • food",
                 icon: "🍟",
-                link: "https://example.com"
+                link: "http://spottedhorsetavernct.com/shelton/menus.php"
             }
 
         ],
@@ -163,16 +163,16 @@ const CONFIG = {
 
             {
                 name: "Please go back and think harder",
-                description: "Just kidding I will cook up a great spot",
+                description: "Just kidding I cooked up a great spot",
                 icon: "✨",
-                link: "https://example.com"
+                link: "https://bangkokroomansonia.com/menu"
             },
 
             {
                 name: "Surprise Option Two",
                 description: "Trust the process.",
                 icon: "❤️",
-                link: "https://example.com"
+                link: "https://thelandingatfivetwenty.com/food-menu"
             }
 
         ]

@@ -1,9 +1,9 @@
 :root {
-    --background: #fff8f7;
-    --background-two: #fdf0ee;
+    --background: #5572c9;
+    --background-two: hsl(60, 19%, 95%);
 
     --text: #292323;
-    --muted: #847878;
+    --muted: #1e1d1d;
 
     --accent: #c96b73;
     --accent-dark: #a94f59;
@@ -356,7 +356,7 @@ h1 {
 
     box-shadow: var(--shadow);
 
-    border-color: rgba(201, 107, 115, 0.3);
+    border-color: rgba(250, 247, 247, 0.3);
 }
 
 
